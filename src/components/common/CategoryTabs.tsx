@@ -12,15 +12,15 @@ export default function CategoryTabs({
   onCategoryChange,
 }: CategoryTabsProps) {
   return (
-    <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+    <div className="flex gap-3 flex-wrap">
       {categories.map((category) => (
         <button
           key={category}
           onClick={() => onCategoryChange(category)}
-          className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+          className={`inline-flex items-center justify-center px-4 py-1.5 rounded-lg text-[15px] font-semibold leading-[160%] whitespace-nowrap transition-colors ${
             activeCategory === category
-              ? "bg-primary text-white"
-              : "bg-surface-light dark:bg-surface-dark text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark"
+              ? "bg-[#e8f3ff] text-[#3182f6] dark:bg-[#1a2744] dark:text-[#4a9eff]"
+              : "text-text-secondary-light dark:text-text-secondary-dark hover:text-[#3182f6] dark:hover:text-[#4a9eff]"
           }`}
         >
           {category}

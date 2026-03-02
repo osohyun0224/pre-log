@@ -5,6 +5,14 @@ import PostList from "@/components/post/PostList";
 import CategoryTabs from "@/components/common/CategoryTabs";
 import type { PostMeta } from "@/lib/posts";
 
+const categoryDescriptions: Record<string, string> = {
+  All: "개발하며 배운 것들을 기록하고 공유합니다",
+  Engineering: "개발하며 배운 기술과 문제 해결 과정을 기록합니다",
+  Design: "디자인 시스템과 UI/UX에 대한 이야기를 나눕니다",
+  Career: "개발자로서의 성장과 커리어에 대해 이야기합니다",
+  Life: "일상 속 생각과 경험을 공유합니다",
+};
+
 interface PostsClientProps {
   posts: PostMeta[];
   categories: string[];
@@ -32,9 +40,14 @@ export default function PostsClient({ posts, categories }: PostsClientProps) {
 
   return (
     <div className="container-layout py-16">
-      <h1 className="text-3xl font-bold text-text-primary-light dark:text-text-primary-dark mb-8">
-        Posts
-      </h1>
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-text-primary-light dark:text-text-primary-dark mb-4">
+          {activeCategory === "All" ? "Posts" : activeCategory}
+        </h1>
+        <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark">
+          {categoryDescriptions[activeCategory] ?? ""}
+        </p>
+      </div>
 
       <div className="mb-6">
         <CategoryTabs

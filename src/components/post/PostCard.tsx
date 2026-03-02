@@ -1,13 +1,26 @@
 import Link from "next/link";
 import type { PostMeta } from "@/lib/posts";
-import { formatDate } from "@/lib/utils";
 
 export default function PostCard({ post }: { post: PostMeta }) {
   return (
     <Link href={`/posts/${post.slug}`} className="group block">
-      <article className="h-full rounded-2xl border border-border-light dark:border-border-dark overflow-hidden bg-bg-light dark:bg-bg-dark hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+      <article className="flex items-start gap-8 py-10">
+        {/* Text Content */}
+        <div className="flex-1 min-w-0">
+          <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-lg text-[13px] font-semibold leading-[160%] border-none cursor-default pointer-events-none mb-4 bg-[#e8f3ff] text-[#3182f6] dark:bg-[#1a2744] dark:text-[#4a9eff]">
+            {post.category}
+          </span>
+          <h3 className="text-xl md:text-2xl font-bold text-text-primary-light dark:text-text-primary-dark group-hover:text-primary transition-colors line-clamp-2 mb-3">
+            {post.title}
+          </h3>
+          <p className="text-base text-text-secondary-light dark:text-text-secondary-dark line-clamp-2 leading-relaxed">
+            {post.summary}
+          </p>
+        </div>
+
+        {/* Thumbnail */}
         {post.thumbnail && (
-          <div className="aspect-[16/9] overflow-hidden bg-surface-light dark:bg-surface-dark">
+          <div className="shrink-0 w-40 h-28 md:w-52 md:h-36 rounded-2xl overflow-hidden bg-surface-light dark:bg-surface-dark">
             <img
               src={post.thumbnail}
               alt={post.title}
@@ -15,22 +28,6 @@ export default function PostCard({ post }: { post: PostMeta }) {
             />
           </div>
         )}
-        <div className="p-6">
-          <span className="inline-block text-xs font-medium text-primary bg-primary/5 px-2.5 py-1 rounded-full mb-3">
-            {post.category}
-          </span>
-          <h3 className="text-lg font-bold text-text-primary-light dark:text-text-primary-dark group-hover:text-primary transition-colors line-clamp-2 mb-2">
-            {post.title}
-          </h3>
-          <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark line-clamp-2 mb-4">
-            {post.summary}
-          </p>
-          <div className="flex items-center gap-2 text-xs text-text-secondary-light dark:text-text-secondary-dark">
-            <time>{formatDate(post.date)}</time>
-            <span>·</span>
-            <span>{post.readingTime}</span>
-          </div>
-        </div>
       </article>
     </Link>
   );

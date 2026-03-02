@@ -44,7 +44,7 @@ export default async function PostPage({ params }: Props) {
         <div className="max-w-content w-full">
           {/* Post Header */}
           <header className="mb-12">
-            <span className="inline-block text-sm font-medium text-primary bg-primary/5 px-3 py-1 rounded-full mb-4">
+            <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-lg text-[13px] font-semibold leading-[160%] border-none cursor-default pointer-events-none mb-4 bg-[#e8f3ff] text-[#3182f6] dark:bg-[#1a2744] dark:text-[#4a9eff]">
               {post.category}
             </span>
             <h1 className="text-3xl md:text-4xl font-bold text-text-primary-light dark:text-text-primary-dark leading-tight mb-4">
