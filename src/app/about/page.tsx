@@ -14,7 +14,7 @@ export default function AboutPage() {
 
       <div className="prose dark:prose-invert max-w-none">
         <p>
-          안녕하세요! <strong>secret.blog</strong>에 오신 것을 환영합니다.
+          안녕하세요! <strong>garden</strong>에 오신 것을 환영합니다.
         </p>
         <p>
           이 블로그는 개발하며 배운 것들을 기록하고 공유하기 위해 만들었습니다.

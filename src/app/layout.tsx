@@ -6,12 +6,12 @@ import { ThemeProvider } from "@/components/common/ThemeProvider";
 
 export const metadata: Metadata = {
   title: {
-    default: "secret.blog",
-    template: "%s | secret.blog",
+    default: "garden",
+    template: "%s | garden",
   },
   description: "개발하며 배운 것들을 기록합니다.",
   openGraph: {
-    title: "secret.blog",
+    title: "garden",
     description: "개발하며 배운 것들을 기록합니다.",
     type: "website",
     locale: "ko_KR",

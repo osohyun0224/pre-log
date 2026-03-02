@@ -42,7 +42,7 @@ export default function HomePage() {
           ) : (
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-text-primary-light dark:text-text-primary-dark mb-4 leading-tight">
-                secret.blog
+                garden
               </h1>
               <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-2xl">
                 개발하며 배운 것들을 기록합니다.

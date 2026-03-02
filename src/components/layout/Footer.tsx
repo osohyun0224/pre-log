@@ -10,7 +10,7 @@ export default function Footer() {
               href="/"
               className="text-lg font-bold text-text-primary-light dark:text-text-primary-dark"
             >
-              secret.blog
+              garden
             </Link>
             <p className="mt-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
               개발하며 배운 것들을 기록합니다.
@@ -64,7 +64,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-border-light dark:border-border-dark">
           <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-            &copy; {new Date().getFullYear()} secret.blog. All rights reserved.
+            &copy; {new Date().getFullYear()} garden. All rights reserved.
           </p>
         </div>
       </div>

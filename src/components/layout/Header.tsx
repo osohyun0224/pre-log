@@ -20,7 +20,7 @@ export default function Header() {
           href="/"
           className="text-xl font-bold text-text-primary-light dark:text-text-primary-dark hover:text-primary transition-colors"
         >
-          secret.blog
+          garden
         </Link>
 
         <div className="flex items-center gap-1">
