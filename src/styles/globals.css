@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #0064FF;
+
+  --color-bg-light: #FFFFFF;
+  --color-bg-dark: #1B1D1F;
+  --color-surface-light: #F4F4F4;
+  --color-surface-dark: #2B2D31;
+  --color-text-primary-light: #191F28;
+  --color-text-primary-dark: #ECECEC;
+  --color-text-secondary-light: #8B95A1;
+  --color-text-secondary-dark: #6B7684;
+  --color-border-light: #E5E8EB;
+  --color-border-dark: #3B3D40;
+
+  --font-family-sans: "Pretendard Variable", "Pretendard", "Inter", -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+  --max-width-content: 720px;
+  --max-width-layout: 1200px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    word-break: keep-all;
+  }
+
+  body {
+    @apply bg-bg-light text-text-primary-light antialiased;
+    @apply dark:bg-bg-dark dark:text-text-primary-dark;
+    font-family: var(--font-family-sans);
+    line-height: 1.8;
+  }
+
+  ::selection {
+    background-color: rgba(0, 100, 255, 0.15);
+  }
+}
+
+@layer components {
+  .prose {
+    @apply max-w-content;
+  }
+
+  .prose :where(h1, h2, h3, h4) {
+    @apply font-bold text-text-primary-light dark:text-text-primary-dark;
+    scroll-margin-top: 80px;
+  }
+
+  .prose h1 {
+    @apply text-3xl mt-12 mb-6;
+  }
+
+  .prose h2 {
+    @apply text-2xl mt-10 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl mt-8 mb-3;
+  }
+
+  .prose p {
+    @apply my-4 leading-relaxed;
+  }
+
+  .prose a {
+    @apply text-primary no-underline hover:underline;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 my-6 text-text-secondary-light dark:text-text-secondary-dark italic;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply my-4 pl-6;
+  }
+
+  .prose li {
+    @apply my-1;
+  }
+
+  .prose img {
+    @apply rounded-lg my-6;
+  }
+
+  .prose hr {
+    @apply my-8 border-border-light dark:border-border-dark;
+  }
+
+  .prose table {
+    @apply w-full my-6 text-sm;
+  }
+
+  .prose th {
+    @apply bg-surface-light dark:bg-surface-dark px-4 py-2 text-left font-semibold border-b border-border-light dark:border-border-dark;
+  }
+
+  .prose td {
+    @apply px-4 py-2 border-b border-border-light dark:border-border-dark;
+  }
+
+  .prose code:not(pre code) {
+    @apply bg-surface-light dark:bg-surface-dark text-primary px-1.5 py-0.5 rounded text-sm font-normal;
+  }
+
+  .prose pre {
+    @apply my-6 rounded-lg overflow-x-auto text-sm leading-relaxed;
+  }
+
+  .prose pre > code {
+    @apply grid;
+  }
+
+  .prose [data-rehype-pretty-code-title] {
+    @apply bg-surface-dark text-text-secondary-dark px-4 py-2 rounded-t-lg text-sm font-mono;
+  }
+
+  .prose [data-rehype-pretty-code-title] + pre {
+    @apply rounded-t-none mt-0;
+  }
+
+  .prose [data-line] {
+    @apply px-4 border-l-2 border-transparent;
+  }
+
+  .prose [data-highlighted-line] {
+    @apply bg-primary/10 border-l-primary;
+  }
+}
+
+@utility container-layout {
+  max-width: var(--max-width-layout);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
