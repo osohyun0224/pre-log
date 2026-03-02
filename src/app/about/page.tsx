@@ -13,7 +13,7 @@ export default function AboutPage() {
           About
         </h1>
 
-        <div className="prose dark:prose-dark">
+        <div className="prose dark:prose-invert">
           <p>
             안녕하세요! <strong>secret.blog</strong>에 오신 것을 환영합니다.
           </p>

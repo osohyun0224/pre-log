@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
-import PostDetailClient from "./PostDetailClient";
+import PostDetailClient, { PostTOC } from "./PostDetailClient";
 import type { Metadata } from "next";
 
 interface Props {
@@ -40,23 +40,30 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <article className="container-layout py-16">
-      {/* Post Header */}
-      <header className="max-w-content mx-auto mb-12">
-        <span className="inline-block text-sm font-medium text-primary bg-primary/5 px-3 py-1 rounded-full mb-4">
-          {post.category}
-        </span>
-        <h1 className="text-3xl md:text-4xl font-bold text-text-primary-light dark:text-text-primary-dark leading-tight mb-4">
-          {post.title}
-        </h1>
-        <div className="flex items-center gap-3 text-sm text-text-secondary-light dark:text-text-secondary-dark">
-          <time>{formatDate(post.date)}</time>
-          <span>·</span>
-          <span>{post.readingTime}</span>
-        </div>
-      </header>
+      <div className="flex gap-12 justify-center">
+        <div className="max-w-content w-full">
+          {/* Post Header */}
+          <header className="mb-12">
+            <span className="inline-block text-sm font-medium text-primary bg-primary/5 px-3 py-1 rounded-full mb-4">
+              {post.category}
+            </span>
+            <h1 className="text-3xl md:text-4xl font-bold text-text-primary-light dark:text-text-primary-dark leading-tight mb-4">
+              {post.title}
+            </h1>
+            <div className="flex items-center gap-3 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+              <time>{formatDate(post.date)}</time>
+              <span>·</span>
+              <span>{post.readingTime}</span>
+            </div>
+          </header>
 
-      {/* Content + TOC */}
-      <PostDetailClient content={post.content} />
+          {/* Content + Comments */}
+          <PostDetailClient content={post.content} />
+        </div>
+
+        {/* Table of Contents */}
+        <PostTOC content={post.content} />
+      </div>
     </article>
   );
 }
