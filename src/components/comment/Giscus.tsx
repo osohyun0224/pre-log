@@ -9,15 +9,15 @@ export default function Giscus() {
   return (
     <div className="mt-16 pt-8 border-t border-border-light dark:border-border-dark">
       <GiscusComponent
-        repo="sohyunoh/secret-blog"
-        repoId=""
-        category="General"
-        categoryId=""
+        repo="osohyun0224/pre-log"
+        repoId="R_kgDORcP5sg"
+        category="Comments"
+        categoryId="DIC_kwDORcP5ss4C3gxm"
         mapping="pathname"
         strict="0"
         reactionsEnabled="1"
         emitMetadata="0"
-        inputPosition="top"
+        inputPosition="bottom"
         theme={theme === "dark" ? "dark" : "light"}
         lang="ko"
         loading="lazy"
