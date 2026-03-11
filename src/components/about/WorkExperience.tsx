@@ -45,6 +45,7 @@ const experiences: Experience[] = [
         <ServiceLink href="https://tossinsight.im">토스인사이트</ServiceLink>,{" "}
         <ServiceLink href="https://toss.im/facepass">페이스패스</ServiceLink>,{" "}
         <ServiceLink href="https://toss.im/apps-in-toss">앱인토스</ServiceLink>,{" "}
+        <ServiceLink href="https://toss.im/guardians-25">토스 보안컨퍼런스 2025</ServiceLink>{" "}
         <ServiceLink href="https://toss.im/career/event/next-developer-2025">이벤트 채용(25 NEXT)</ServiceLink>{" "}
         등 다양한 웹서비스를 개발했습니다.
       </>,
@@ -90,13 +91,21 @@ export default function WorkExperience() {
   return (
     <section className="container-layout mb-20">
       <motion.h2
-        className="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark mb-10"
+        className="text-3xl font-bold text-text-primary-light dark:text-text-primary-dark mb-3"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         Work
       </motion.h2>
+      <motion.p
+        className="text-base text-text-secondary-light dark:text-text-secondary-dark max-w-xl leading-relaxed mb-10"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        저의 업무 경력입니다.
+      </motion.p>
 
       <motion.div
         className="relative"
