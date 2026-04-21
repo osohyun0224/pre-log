@@ -36,11 +36,11 @@ export default function AboutPage() {
         </section>
       )}
 
-      {/* Activities */}
+      /* {/* Activities */}
       {activities.length > 0 && <ActivitySection activities={activities} />}
 
       {/* Awards */}
-      {awards.length > 0 && <AwardSection awards={awards} />}
+      {awards.length > 0 && <AwardSection awards={awards} />} */
     </div>
   );
 }
