@@ -3,8 +3,8 @@ import { getAllProjects } from "@/lib/projects";
 import { getAllActivities } from "@/lib/activities";
 import { getAllAwards } from "@/lib/awards";
 import ProjectSection from "@/components/project/ProjectSection";
-import ActivitySection from "@/components/activity/ActivitySection";
-import AwardSection from "@/components/award/AwardSection";
+// import ActivitySection from "@/components/activity/ActivitySection";
+// import AwardSection from "@/components/award/AwardSection";
 import WorkExperience from "@/components/about/WorkExperience";
 
 export const metadata: Metadata = {
@@ -35,12 +35,6 @@ export default function AboutPage() {
           </p>
         </section>
       )}
-
-      /* {/* Activities */}
-      {activities.length > 0 && <ActivitySection activities={activities} />}
-
-      {/* Awards */}
-      {awards.length > 0 && <AwardSection awards={awards} />} */
     </div>
   );
 }
